@@ -23,24 +23,15 @@ const FadeInRight = keyframes`
 `;
 
 export const HomeContainer = styled.div`
-  /* .swiper::before {
-    content: '';
-    width: 100%;
-    height: 100%;
-
-    position: absolute;
-    pointer-events: none;
-    z-index: 3;
-    background: rgba(0, 0, 0, 0.5);
-  } */
-
-  .swiper-button-prev,
-  .swiper-button-next {
-    color: ${({ theme }) => theme.COLORS.WHITE_100};
-    &:hover {
-      transform: scale(1.2, 1.2);
+  .swiper2 {
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: ${({ theme }) => theme.COLORS.WHITE_100};
+      &:hover {
+        transform: scale(1.2, 1.2);
+      }
+      width: 5rem;
     }
-    width: 5rem;
   }
 `;
 
@@ -90,6 +81,16 @@ export const Caption = styled.div`
     animation: ${FadeInRight} 1s;
     transition: all 1s;
   }
+
+  @media (max-width: 1024px) {
+    h1 {
+      font-size: 4.8rem;
+    }
+
+    p {
+      font-size: 3.2rem;
+    }
+  }
 `;
 
 export const ServicesSection = styled.section`
@@ -100,7 +101,7 @@ export const ServicesSection = styled.section`
 
   align-items: center;
 
-  padding: 4rem 0 2.4rem;
+  padding: 6.4rem 0 6.4rem;
 
   > h1 {
     font-family: ${({ theme }) => theme.FONTS.ROBOTO_CONDENSED};
@@ -115,6 +116,11 @@ export const ServicesSection = styled.section`
 
 export const Cards = styled.div`
   display: flex;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
 `;
 
 export const Card = styled.div`
@@ -149,4 +155,84 @@ export const Card = styled.div`
 
     background-color: ${({ theme }) => theme.COLORS.ORANGE_DEFAULT};
   }
+`;
+
+export const AboutUs = styled.section`
+  width: 100%;
+  height: 40rem;
+
+  margin: 0 0 4rem;
+
+  background-color: ${({ theme }) => theme.COLORS.GRAY_100};
+
+  display: flex;
+
+  > img {
+    width: 50%;
+  }
+
+  > div {
+    width: 50%;
+
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.8rem;
+
+    padding: 4rem 2.8rem;
+
+    font-family: ${({ theme }) => theme.FONTS.ROBOTO_CONDENSED};
+
+    h1 {
+      font-weight: 400;
+      font-size: 3.6rem;
+
+      color: ${({ theme }) => theme.COLORS.BLACK_300};
+    }
+
+    p {
+      width: 50rem;
+
+      font-weight: 300;
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    > div {
+      width: 100%;
+
+      h1 {
+        font-size: 2.4rem;
+      }
+
+      p {
+        width: 36rem;
+        font-size: 1.6rem;
+
+        text-align: center;
+      }
+    }
+
+    > img {
+      display: none;
+    }
+  }
+`;
+
+export const Footer = styled.footer`
+  width: 100%;
+  height: 8rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: ${({ theme }) => theme.COLORS.BLACK_200};
+
+  font-family: ${({ theme }) => theme.FONTS.OPEN_SANS};
+  font-size: 1.2rem;
+  color: ${({ theme }) => theme.COLORS.GRAY_300};
 `;

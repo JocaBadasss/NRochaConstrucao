@@ -1,9 +1,13 @@
-import { HeaderContainer } from './styles';
+import { HeaderContainer, MenuBurger } from './styles';
 import Logo from '../../assets/logo.png';
 import { useEffect, useState } from 'react';
 
+import useWidth from '../../hooks/useResize';
+
 export const Header = () => {
   const [isScrolling, setIsScrolling] = useState(false);
+
+  const Width = useWidth();
 
   const handleScrollDown = () => {
     if (window.scrollY !== 0) {
@@ -25,12 +29,20 @@ export const Header = () => {
         alt=''
       />
 
-      <nav>
-        <a href='#'>Home</a>
-        <a href='#'>Serviços</a>
-        <a href='#'>Sobre nós</a>
-        <a href='#'>Contato</a>
-      </nav>
+      <MenuBurger>
+        <div />
+        <div />
+        <div />
+      </MenuBurger>
+
+      {Width >= 1024 && (
+        <nav>
+          <a href='#'>HOME</a>
+          <a href='#'>SERVIÇOS</a>
+          <a href='#'>SOBRE NÓS</a>
+          <a href='#'>CONTATO</a>
+        </nav>
+      )}
     </HeaderContainer>
   );
 };

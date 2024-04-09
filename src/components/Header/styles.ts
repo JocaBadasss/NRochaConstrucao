@@ -47,4 +47,60 @@ export const HeaderContainer = styled.header.withConfig({
 
     text-decoration: none;
   }
+
+  @media (max-width: 1024px) {
+    padding: 2rem 2rem;
+
+    > img {
+      height: 4rem;
+    }
+  }
+`;
+
+export const MenuBurger = styled.button`
+  position: static;
+  z-index: 999999999999999;
+
+  width: 2.6rem;
+  height: 1.8rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  background: none;
+  border: none;
+
+  > div {
+    position: relative;
+
+    width: 1.95rem;
+    height: 0.2rem;
+    border-radius: 99rem;
+    transition: all 0.3s linear;
+    transform-origin: 1px;
+
+    background-color: ${({ theme }) => theme.COLORS.WHITE_100};
+  }
+
+  /* :first-child {
+    transform: ${({ $menuisopen }) =>
+    $menuisopen ? 'rotate(45deg)' : 'rotate(0)'};
+  }
+
+  :nth-child(2) {
+    opacity: ${({ $menuisopen }) => ($menuisopen ? '0' : '1')};
+    transform: ${({ $menuisopen }) =>
+    $menuisopen ? 'translateX(20px)' : 'translateX(0)'};
+  }
+
+  :nth-child(3) {
+    transform: ${({ $menuisopen }) =>
+    $menuisopen ? 'rotate(-45deg)' : 'rotate(0)'};
+  } */
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
 `;
